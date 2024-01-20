@@ -14,7 +14,7 @@ def draw_menu
   loop do
     system "clear"
     puts "+-- PHONEBOOK --+".center(@width_center_space)
-    puts "\n1 - Contacts\n2 - Add\n3 - Edit\n4 - Remove\n0 - Exit"
+    puts "\n1 - Contacts\n2 - Add\n3 - Edit\n4 - Remove\n5 - View one Contact\n0 - Exit"
 
     print "\nEnter the number of option: "
     user_option = gets.chomp.to_i
@@ -28,10 +28,10 @@ def draw_menu
       edit_contacts(@names)
     when phonebook_options[:del]
       delete_contacts(@names)
+    when phonebook_options[:view_single]
+      view_one_contacts(@names)
     when phonebook_options[:exit]
       exit_program
-    when phonebook_options[:view_single]
-      #TODO
     else
       puts "Not found"
     end
