@@ -19,11 +19,10 @@ def draw_menu
     user_option = gets.chomp.to_i
 
     case user_option
-    when phonebook_options[:view]
-      view
-      gets
     when phonebook_options[:add]
-      puts "Add Contacts"
+      @names.push(add_contacts)
+    when phonebook_options[:view]
+      view_contacts(@names)
     when phonebook_options[:edit]
       puts "Edit Contacts"
     when phonebook_options[:del]
