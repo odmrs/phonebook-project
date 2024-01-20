@@ -1,3 +1,6 @@
+$LOAD_PATH << File.join(File.dirname(__FILE__), "lib")
+require "functions"
+
 def draw_menu
   phonebook_options = {
     view: 1,
@@ -17,7 +20,8 @@ def draw_menu
 
     case user_option
     when phonebook_options[:view]
-      puts "View Contacts"
+      view
+      gets
     when phonebook_options[:add]
       puts "Add Contacts"
     when phonebook_options[:edit]
