@@ -28,8 +28,7 @@ def draw_menu
     when phonebook_options[:del]
       delete_contacts(@names)
     when phonebook_options[:exit]
-      puts "Exit Contacts"
-      exit
+      exit_program
     else
       puts "Not found"
     end

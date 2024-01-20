@@ -54,3 +54,10 @@ def delete_contacts(list_of_names)
   @names.delete(@names.at(delete_user))
 end
 
+def exit_program
+  system "clear"
+  puts "+-- Thanks for use this PHONEBOOK --+".center(@width_center_space)
+  system "sleep 1"
+  system "clear"
+  exit
+end
