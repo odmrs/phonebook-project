@@ -7,6 +7,7 @@ def draw_menu
     add: 2,
     edit: 3,
     del: 4,
+    view_single: 5,
     exit: 0
   }
 
@@ -29,6 +30,8 @@ def draw_menu
       delete_contacts(@names)
     when phonebook_options[:exit]
       exit_program
+    when phonebook_options[:view_single]
+      #TODO
     else
       puts "Not found"
     end
