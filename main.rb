@@ -12,7 +12,7 @@ def draw_menu
 
   loop do
     system "clear"
-    puts "+ PHONEBOOK +".center(40)
+    puts "+-- PHONEBOOK --+".center(@width_center_space)
     puts "\n1 - Contacts\n2 - Add\n3 - Edit\n4 - Remove\n0 - Exit"
 
     print "\nEnter the number of option: "
@@ -26,7 +26,7 @@ def draw_menu
     when phonebook_options[:edit]
       puts "Edit Contacts"
     when phonebook_options[:del]
-      puts "Remove Contacts"
+      delete_contacts(@names)
     when phonebook_options[:exit]
       puts "Exit Contacts"
       exit
