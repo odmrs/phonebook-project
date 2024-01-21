@@ -7,7 +7,7 @@ def add_contacts
   puts "+-- Add Contacts --+\n".center(40)
 
   print "Enter the name of people: "
-  name = gets.chomp
+  name = gets.chomp.capitalize!
   print "Enter the number of people: "
   number = gets.chomp.to_i
   
@@ -15,12 +15,9 @@ def add_contacts
 end
 
 def show_contacts(list_of_names)
-  i = 0
-  while i < list_of_names.length
-    if @names != 0
-      puts "#{i + 1} - Name: #{list_of_names[i][:name]} | Phone: #{list_of_names[i][:phone]}"
-      i += 1
-    end
+  counter = 0
+  @names.each do |index_name|
+    puts "#{counter += 1} - Name: #{index_name[:name]} | Phone: #{index_name[:phone]}"
   end
 end
 
@@ -60,7 +57,7 @@ def name_edit(list_of_names, index_array_names)
   puts "Previus name: #{@names[index_array_names][:name]}"
 
   print "\n\nEnter the new name: "
-  new_name = gets.chomp
+  new_name = gets.chomp.capitalize!
   @names[index_array_names][:name] = new_name
 
   puts "Saved successfully"
