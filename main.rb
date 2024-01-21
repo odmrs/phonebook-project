@@ -10,7 +10,6 @@ def draw_menu
     view_single: 5,
     exit: 0
   }
-
   loop do
     system "clear"
     puts "+-- PHONEBOOK --+".center(@width_center_space)
@@ -18,7 +17,6 @@ def draw_menu
 
     print "\nEnter the number of option: "
     user_option = gets.chomp.to_i
-
     case user_option
     when phonebook_options[:add]
       @names.push(add_contacts)

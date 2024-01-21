@@ -24,8 +24,7 @@ end
 def view_contacts(list_of_names)
   system "clear"
   puts "+-- All Contacts --+\n".center(@width_center_space)
-  if @names.length == 0
-
+  if @names.empty?
     puts "<EMPTY LIST>".center(@width_center_space)
   end
   show_contacts(list_of_names)
@@ -36,7 +35,7 @@ end
 def delete_contacts(list_of_names)
   system "clear"
   puts "+-- Delete Contacts --+\n".center(@width_center_space)
-  if @names.length == 0
+  if @names.empty?
     puts "<EMPTY LIST>".center(@width_center_space)
   end
   show_contacts(list_of_names)
@@ -83,7 +82,7 @@ end
 def edit_contacts(list_of_names)
   system "clear"
   puts "+-- Edit Contacts --+\n".center(@width_center_space)
-  if @names.length == 0
+  if @names.empty?
     puts "<EMPTY LIST>".center(@width_center_space)
   end
   show_contacts(list_of_names)
@@ -130,7 +129,7 @@ end
 def view_one_contacts(list_of_names)
   system "clear"
   puts "+-- View Contact --+\n".center(@width_center_space)
-  if @names.length == 0
+  if @names.empty?
     puts "<EMPTY LIST>".center(@width_center_space)
     puts "\n\n[back to the menu]"
     system "sleep 2"
