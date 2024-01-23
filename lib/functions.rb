@@ -9,7 +9,7 @@ def add_contacts
   system "clear"
   puts "+-- Add Contacts --+\n".center(40)
   print "Enter the name of people: "
-  name = gets.chomp.capitalize!
+  name = gets.chomp.capitalize
   print "Enter the number of people: "
   number = gets.chomp.to_i
   @my_phonebook.add_contacts(name, number)
@@ -26,10 +26,7 @@ end
 def delete_contacts(list_of_names)
   system "clear"
   puts "+-- Delete Contacts --+\n".center(@width_center_space)
-  if @names.empty?
-    puts "<EMPTY LIST>".center(@width_center_space)
-  end
-  show_contacts(list_of_names)
+  @my_phonebook.view_contacts
   puts "\n\n\n[ESC TO BACK]"
   print "Enter the number of the contact you want to delete: "
   esc_to_back = STDIN.getch
@@ -37,8 +34,7 @@ def delete_contacts(list_of_names)
     draw_menu
   end
   delete_user = gets.chomp.to_i - 1
-
-  @names.delete(@names.at(delete_user))
+  @my_phonebook.delete_contact(delete_user)
 end
 
 def name_edit(list_of_names, index_array_names)
