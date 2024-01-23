@@ -23,16 +23,13 @@ def view_contacts
   gets
 end
 
-def delete_contacts(list_of_names)
+def delete_contacts
   system "clear"
   puts "+-- Delete Contacts --+\n".center(@width_center_space)
-  @my_phonebook.view_contacts
+  @my_phonebook.show_contacts
   puts "\n\n\n[ESC TO BACK]"
   print "Enter the number of the contact you want to delete: "
-  esc_to_back = STDIN.getch
-  if esc_to_back == "\e" 
-    draw_menu
-  end
+  # TODO - press esc to return to the menu
   delete_user = gets.chomp.to_i - 1
   @my_phonebook.delete_contact(delete_user)
 end

@@ -25,7 +25,7 @@ def draw_menu
     when phonebook_options[:edit]
       edit_contacts(@names)
     when phonebook_options[:del]
-      delete_contacts(@names)
+      delete_contacts
     when phonebook_options[:view_single]
       view_one_contacts(@names)
     when phonebook_options[:exit]

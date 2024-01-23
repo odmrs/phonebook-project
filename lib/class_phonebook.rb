@@ -19,6 +19,6 @@ class Phonebook
   end
 
   def delete_contact(index_user)
-    @contact.delete(@contact.at(index_user))
+    @contacts.delete_at(index_user)
   end
 end
