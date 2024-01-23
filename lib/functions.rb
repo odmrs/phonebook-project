@@ -1,5 +1,7 @@
 require 'io/console'
-@names = []
+require_relative "class_contacts"
+require_relative "class_phonebook"
+
 @width_center_space = 40
 
 def add_contacts
@@ -10,8 +12,8 @@ def add_contacts
   name = gets.chomp.capitalize!
   print "Enter the number of people: "
   number = gets.chomp.to_i
-  
-  return {name: name, phone: number}
+  my_phonebook = Phonebook.new()
+  my_phonebook.add_contacts(name, number)
 end
 
 def show_contacts(list_of_names)
