@@ -59,25 +59,8 @@ end
 def view_one_contact
   system "clear"
   puts "+-- View Contact --+\n".center(@width_center_space)
-  if @names.empty?
-    puts "<EMPTY LIST>".center(@width_center_space)
-    puts "\n\n[back to the menu]"
-    system "sleep 2"
-    draw_menu
-  end
-
   print "\n\nEnter the name of contact: "
   user_option = gets.chomp
-
-  list_of_names.each do |name_index|
-    if name_index[:name] == user_option
-      puts "\nName: #{name_index[:name]} | Phone: #{name_index[:phone]}"
-      print "\n\n[ENTER BACK TO MENU]"
-      gets
-      draw_menu
-    end
-  end
-  puts "\nName not found, try again"
-  system "sleep 2"
-  view_one_contacts
+  @my_phonebook.view_one_contact(user_option)
+  draw_menu
 end

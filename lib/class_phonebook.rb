@@ -11,6 +11,20 @@ class Phonebook
   end
 
   public
+  def view_one_contact(user_option)
+    @contacts.each do |name_index|
+      if name_index[:name] == user_option
+        puts "\nName: #{name_index[:name]} | Phone: #{name_index[:phone]}"
+        print "\n\n[ENTER BACK TO MENU]"
+        gets
+        return
+      end
+    end
+    puts "\nName not found, try again"
+    system "sleep 2"
+  end
+
+  public
   def show_contacts
     counter = 0
     @contacts.each do |list_index|
