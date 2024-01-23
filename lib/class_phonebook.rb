@@ -29,6 +29,6 @@ class Phonebook
 
   public
   def edit_phone(index_user, new_phone)
-    @contacts[index_user][:name] = new_phone
+    @contacts[index_user][:phone] = new_phone
   end
 end

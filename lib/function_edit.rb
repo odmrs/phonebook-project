@@ -16,12 +16,11 @@ end
 def phone_edit(index_array_names)
   system "clear"
   puts "+-- Phone edit Contact --+\n".center(@width_center_space)
-  puts "Previus phone: #{@names[index_array_names][:phone]}"
+  puts "Previus phone: #{@my_phonebook.contacts[index_array_names][:phone]}"
 
   print "\n\nEnter the new phone: "
-  new_name = gets.chomp.to_i
-  @names[index_array_names][:phone] = new_name
-
+  new_phone = gets.chomp.to_i
+  @my_phonebook.edit_phone(index_array_names, new_phone)
   puts "Saved successfully"
   system "sleep 1"
   edit_contact
