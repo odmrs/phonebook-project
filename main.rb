@@ -23,7 +23,7 @@ def draw_menu
     when phonebook_options[:view]
       view_contacts
     when phonebook_options[:edit]
-      edit_contacts(@names)
+      edit_contact
     when phonebook_options[:del]
       delete_contacts
     when phonebook_options[:view_single]

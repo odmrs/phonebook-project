@@ -1,11 +1,11 @@
 class Phonebook
-  attr_reader :contatos
+  attr_reader :contacts
 
   def initialize
     @contacts = []
   end
 
-  def add_contacts(name, number)
+  def add_contact(name, number)
     new_contact = Contact.new(name, number)
     @contacts.push({name: name, phone: number})
   end
@@ -20,5 +20,15 @@ class Phonebook
 
   def delete_contact(index_user)
     @contacts.delete_at(index_user)
+  end
+
+  public
+  def edit_name(index_user, new_name)
+    @contacts[index_user][:name] = new_name
+  end
+
+  public
+  def edit_phone(index_user, new_phone)
+    @contacts[index_user][:name] = new_phone
   end
 end
