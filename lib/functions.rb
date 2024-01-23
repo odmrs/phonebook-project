@@ -2,34 +2,23 @@ require 'io/console'
 require_relative "class_contacts"
 require_relative "class_phonebook"
 
+@my_phonebook = Phonebook.new()
 @width_center_space = 40
 
 def add_contacts
   system "clear"
   puts "+-- Add Contacts --+\n".center(40)
-
   print "Enter the name of people: "
   name = gets.chomp.capitalize!
   print "Enter the number of people: "
   number = gets.chomp.to_i
-  my_phonebook = Phonebook.new()
-  my_phonebook.add_contacts(name, number)
+  @my_phonebook.add_contacts(name, number)
 end
 
-def show_contacts(list_of_names)
-  counter = 0
-  @names.each do |index_name|
-    puts "#{counter += 1} - Name: #{index_name[:name]} | Phone: #{index_name[:phone]}"
-  end
-end
-
-def view_contacts(list_of_names)
+def view_contacts
   system "clear"
   puts "+-- All Contacts --+\n".center(@width_center_space)
-  if @names.empty?
-    puts "<EMPTY LIST>".center(@width_center_space)
-  end
-  show_contacts(list_of_names)
+  @my_phonebook.show_contacts
   puts "\n\n\n[Enter to back]"
   gets
 end
